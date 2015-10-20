@@ -1,0 +1,3 @@
+Scroll of Gentle Repose: preserves one corpse
+
+ring of Daggerspell stance: You gain +2 insight bonus on attack rolls and damage rolls if you make a full attack, SR 5 + caster level if you fight defensively, and DR 5/magic if you use the total defense action.
