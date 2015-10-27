@@ -46,7 +46,7 @@ public class CombatCamera : MonoBehaviour
 		SoftPauseScript.instance.SoftFixedUpdate += SoftLateUpdate;
 	}
 	
-	void Disable()
+	void OnDisable()
 	{
 		//SoftPauseScript.instance.SoftUpdate -= SoftUpdate;
 		SoftPauseScript.instance.SoftFixedUpdate -= SoftLateUpdate;

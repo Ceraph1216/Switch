@@ -37,9 +37,12 @@ public class BasicPlayerMovementScript : MonoBehaviour
 
 	void OnEnable () 
 	{
-
-
 		SoftPauseScript.instance.SoftUpdate += SoftUpdate;
+	}
+	
+	void OnDisable () 
+	{
+		SoftPauseScript.instance.SoftUpdate -= SoftUpdate;
 	}
 	
 	// Update is called once per frame
@@ -172,8 +175,8 @@ public class BasicPlayerMovementScript : MonoBehaviour
 		Debug.DrawRay (l_forwardStartT, forwardDirection * distanceFront, Color.blue);
 		Debug.DrawRay (l_forwardStartB, forwardDirection * distanceFront, Color.blue);
 		
-		//		Debug.DrawRay (topSensorTransform.position, forwardDirection * distanceFront, Color.yellow);
-		//		Debug.DrawRay (bottomSensorTransform.position, forwardDirection * distanceFront, Color.yellow);
+		//Debug.DrawRay (topSensorTransform.position, forwardDirection * distanceFront, Color.yellow);
+		//Debug.DrawRay (bottomSensorTransform.position, forwardDirection * distanceFront, Color.yellow);
 		
 		// Create a raycast for each of the 3 sensor points
 		RaycastHit2D hitR = Physics2D.Raycast(rightSensorTransform.position, downDirection, distanceSide, groundCheckMask);
@@ -181,8 +184,8 @@ public class BasicPlayerMovementScript : MonoBehaviour
 		RaycastHit2D hitG = Physics2D.Raycast(groundSensorTransform.position, downDirection, distanceGround, groundCheckMask);
 		RaycastHit2D hitFT = Physics2D.Raycast(l_forwardStartT, forwardDirection, distanceFront, groundCheckMask);
 		RaycastHit2D hitFB = Physics2D.Raycast(l_forwardStartB, forwardDirection, distanceFront, groundCheckMask);
-		//		RaycastHit2D hitT = Physics2D.Raycast(topSensorTransform.position, forwardDirection, distanceFront, groundCheckMask);
-		//		RaycastHit2D hitB = Physics2D.Raycast(bottomSensorTransform.position, forwardDirection, distanceFront, groundCheckMask);
+		//RaycastHit2D hitT = Physics2D.Raycast(topSensorTransform.position, forwardDirection, distanceFront, groundCheckMask);
+		//RaycastHit2D hitB = Physics2D.Raycast(bottomSensorTransform.position, forwardDirection, distanceFront, groundCheckMask);
 		
 		isHitR = false;
 		isHitL = false;

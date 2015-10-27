@@ -58,24 +58,24 @@ public class SoftPauseScript : MonoBehaviour
 		mInstance = this;
 	}
 	
-	void Update () 
+	void Update() 
 	{
 		if(this.enabled)
 		{
-			if (!softPaused)
+			if(!softPaused)
 			{
-				if (EarlySoftUpdate != null)
+				if(EarlySoftUpdate != null)
 				{
 					EarlySoftUpdate(this.gameObject);
 				}
-				if (SoftUpdate != null)
+				if(SoftUpdate != null)
 				{
 					SoftUpdate(this.gameObject);
 				}
 			}
 			else
 			{
-				if (SoftPause != null)
+				if(SoftPause != null)
 				{
 					SoftPause(this.gameObject);
 				}
@@ -85,11 +85,11 @@ public class SoftPauseScript : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		if (this.enabled)
+		if(this.enabled)
 		{
-			if (!softPaused)
+			if(!softPaused)
 			{
-				if (SoftFixedUpdate != null)
+				if(SoftFixedUpdate != null)
 				{
 					SoftFixedUpdate(this.gameObject);
 				}
@@ -99,11 +99,11 @@ public class SoftPauseScript : MonoBehaviour
 
 	void LateUpdate()
 	{
-		if (this.enabled)
+		if(this.enabled)
 		{
-			if (!softPaused)
+			if(!softPaused)
 			{
-				if (SoftLateUpdate != null)
+				if(SoftLateUpdate != null)
 				{
 					SoftLateUpdate(this.gameObject);
 				}
